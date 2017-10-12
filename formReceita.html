@@ -1,0 +1,53 @@
+<html ng-app="receitas">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+        <title>Receita</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!-- Scripts -->
+        <script src="lib/angular/angular.min.js"></script>
+        <script src="lib/jquery/jquery-3.2.1.min.js"></script>
+        <script src="lib/popper/popper.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/receitas.js"></script>
+        <script src="js/controllers/formReceita.controller.js"></script>		        
+    </head>
+    <body ng-controller="formReceitaController as receita">
+        <div class="container">
+            <div class="jumbotron" ng-show="receita.nomeReceita">
+                <h1 class="text-center">{{receita.nomeReceita}}</h1>   
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label for="nomeReceita">Nome da receita</label>
+                    <input type="text" class="form-control" id="nomeReceita" name="nomeReceita" ng-model="receita.nomeReceita" 
+                        placeholder="Exemplo: bolo de cenoura">
+                </div>
+                <div class="form-group">
+                    <label for="urlReceita">Endereço da receita</label>
+                    <input type="text" class="form-control" id="urlReceita" name="urlReceita" ng-model="receita.urlReceita"
+                        placeholder="Exemplo: www.youtube.com.br">
+                </div>
+                <div class="form-group">
+                    <label for="ingredientesReceita">Ingredientes</label>
+                    <textarea class="form-control" id="ingredientesReceita" name="ingredientesReceita" rows="10" ng-model="receita.ingredientesReceita"
+                        placeholder="Insira os ingredientes da receita aqui"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="preparoReceita">Modo de Preparo</label>
+                    <textarea class="form-control" id="preparoReceita" name="preparoReceita" rows="10" ng-model="receita.preparoReceita"
+                        placeholder="Insira o modo de preparo aqui"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>                
+            </form>
+        </div>
+    </body>
+    
+</html>

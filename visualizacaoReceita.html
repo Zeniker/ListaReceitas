@@ -1,0 +1,39 @@
+<html ng-app="receitas">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+            <title>Receita</title>
+    
+            <!-- CSS -->
+            <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/style.css">
+            
+            <!-- Scripts -->
+            <script src="lib/angular/angular.min.js"></script>
+            <script src="lib/jquery/jquery-3.2.1.min.js"></script>
+            <script src="lib/popper/popper.min.js"></script>
+            <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+            <script src="js/receitas.js"></script>
+            <script src="js/controllers/visualizacaoReceita.controller.js"></script>		        
+        </head>
+        <body ng-controller="visualizacaoReceitaController as receita">
+            <div class="container">
+                <div class="jumbotron" ng-show="receita.nomeReceita">
+                    <h1 class="text-center">Visualização</h1>   
+                </div>             
+                <div class="card">
+                    <div class="card-header">
+                        <h4>{{receita.nomeReceita}}</h4>
+                    </div>                    
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{receita.ingredientesReceita}}</li>
+                        <li class="list-group-item">{{receita.ingredientesReceita}}</li>
+                    </ul>
+                    <div class="card-footer">
+                        <a ng-href="{{receita.urlReceita}}" target="_blank">Endereço da receita</a>
+                    </div>
+                </div>
+            </div>
+        </body>
+        
+    </html>
