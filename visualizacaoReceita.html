@@ -21,14 +21,15 @@
                 <div class="jumbotron" ng-show="receita.nomeReceita">
                     <h1 class="text-center">Visualização</h1>   
                 </div>             
-                <div class="card">
+                <div class="card cartao-receita">
                     <div class="card-header">
                         <h4>{{receita.nomeReceita}}</h4>
                     </div>                    
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{receita.ingredientesReceita}}</li>
-                        <li class="list-group-item">{{receita.ingredientesReceita}}</li>
-                    </ul>
+                    <div class="card-body">
+                        {{receita.ingredientesReceita}}
+                        <hr>
+                        {{receita.ingredientesReceita}}
+                    </div>                    
                     <div class="card-footer">
                         <a ng-href="{{receita.urlReceita}}" target="_blank">Endereço da receita</a>
                     </div>
